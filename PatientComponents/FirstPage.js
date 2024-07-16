@@ -24,27 +24,7 @@ function FirstPage() {
           />
         </View>
         <View style={styles.row2}>
-          {/* <Image
-            resizeMode="contain"
-            source={{
-              uri:
-                "https://cdn.builder.io/api/v1/image/assets/TEMP/da60e6448b35cf0b08515911e92df6d947bbc950b16a2894004ab52990a603c6?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-            }}
-            style={styles.image3}
-          /> */}
-          {/* <View style={styles.column}>
-            <Text style={styles.logo}>
-              neuro<Text style={styles.bold}>nest</Text>
-            </Text>
-            <Image
-              resizeMode="contain"
-              source={{
-                uri:
-                  "https://cdn.builder.io/api/v1/image/assets/TEMP/2254b99443441f3a222958f5c552b1fc69d37bd74e8857d1548fdfe05c863979?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-              }}
-              style={styles.image4}
-            />
-          </View> */}
+          
         </View>
         <Text style={styles.greeting}>
           <Text style={styles.bold}>Good morning,</Text>
@@ -64,31 +44,58 @@ function FirstPage() {
             <Text style={styles.cardTitle}>Self Diagnostics</Text>
             <View style={styles.cardContent}>
               <Text style={styles.cardText}>Take the test</Text>
-              <Image
-                resizeMode="contain"
-                source={{
-                  uri:
-                    "https://cdn.builder.io/api/v1/image/assets/TEMP/7356b63c2c350ad57987ce7e79241c155c5f9a50acfd4ff3cd1ddc7f5327cd74?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-                }}
-                style={styles.image6}
-              />
+              
             </View>
           </View>
           <View style={styles.card}>
             <Text style={styles.cardTitle}>Manage Appointments</Text>
             <View style={styles.cardContent}>
               <Text style={styles.cardText}>View and book</Text>
-              <Image
-                resizeMode="contain"
-                source={{
-                  uri:
-                    "https://cdn.builder.io/api/v1/image/assets/TEMP/9a7472876fa78194070934767bf6d4146df6e66ca11e21b8f7d170c2349399c2?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-                }}
-                style={styles.image7}
-              />
+              
             </View>
           </View>
         </View>
+        <View style={styles.row3}>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Educational Hub </Text>
+            <View style={styles.cardContent}>
+              <Text style={styles.cardText}>Find Helpful Blogs</Text>
+              
+            </View>
+          </View>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Dementia Bot</Text>
+            <View style={styles.cardContent}>
+              <Text style={styles.cardText}>Personal assistance</Text>
+              
+            </View>
+          </View>
+        </View>
+        <View style={styles.row3}>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Memory Games</Text>
+            <View style={styles.cardContent}>
+              <Text style={styles.cardText}>Stimulate Cognitive ability</Text>
+              
+            </View>
+          </View>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Take me Home</Text>
+            <View style={styles.cardContent}>
+              <Text style={styles.cardText}>Find my way back</Text>
+              
+            </View>
+          </View>
+        </View>
+        <View style={styles.row4}>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Emergency SOS</Text>
+            <View style={styles.cardContent}>
+              <Text style={styles.cardText}>Need Help?</Text>
+            </View>
+          </View>
+        </View>
+        
         {/* <View style={styles.bottom}>
           <View style={styles.nav}>
             <Image
@@ -147,9 +154,10 @@ const styles = StyleSheet.create({
   container: {
     maxWidth: 480,
     width: "100%",
+    height: "100%",
     flexDirection: "column",
     alignItems: "center",
-    marginVertical: 16,
+    marginBottom: 16,
   },
   row1: {
     flexDirection: "row",
@@ -172,8 +180,15 @@ const styles = StyleSheet.create({
     width: "100%",
     // paddingHorizontal: 16,
     marginTop: 22,
-    fontFamily: "Gelion, sans-serif"
 
+  },
+  row4: {
+    flexDirection: "row",
+    justifyContent: "center",
+    maxWidth: 355,
+    width: "100%",
+    // paddingHorizontal: 16,
+    marginTop: 22,
   },
   image1: {
     width: 60,
@@ -215,6 +230,7 @@ const styles = StyleSheet.create({
     marginTop: 39,
   },
   card: {
+    fontFamily: "Gelion, sans-serif",
     borderRadius: 24,
     borderWidth: 2,
     borderColor: "rgba(93, 69, 219, 1)",
@@ -226,7 +242,8 @@ const styles = StyleSheet.create({
   cardTitle: {
     color: "#5D45DB",
     fontSize: 16,
-    fontFamily: "Mulish, sans-serif",
+    fontFamily: "Gelion, sans-serif",
+    fontWeight: "bold"
   },
   cardContent: {
     flexDirection: "row",
@@ -236,7 +253,9 @@ const styles = StyleSheet.create({
   cardText: {
     color: "#5D45DB",
     fontSize: 12,
-    fontFamily: "Mulish, sans-serif",
+    fontFamily: "Gelion, sans-serif",
+    fontWeight: "bold"
+
   },
   image6: {
     width: 20,
