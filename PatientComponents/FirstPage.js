@@ -6,14 +6,15 @@ function FirstPage() {
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         <View style={styles.row1}>
-          <Image
+          {/* <Image
             resizeMode="contain"
             source={{
               uri:
                 "https://cdn.builder.io/api/v1/image/assets/TEMP/960648d5d882e437ca59f98ea36ff6194169a3e18d689a1f03c6029a310abdaa?apiKey=12fbf716322d41b9b96b841cf19d799b&",
             }}
             style={styles.image1}
-          />
+          /> */}
+          <Text style={styles.image1}>9:41</Text>
           <Image
             resizeMode="contain"
             source={{
@@ -165,6 +166,7 @@ const styles = StyleSheet.create({
     maxWidth: 355,
     width: "100%",
     paddingHorizontal: 16,
+    height: 30
   },
   row2: {
     flexDirection: "row",
@@ -192,7 +194,13 @@ const styles = StyleSheet.create({
   },
   image1: {
     width: 60,
-    height: 40,
+    height: "100%",
+    fontFamily: "Gelion, sans-serif",
+    fontSize: 15,
+    display: 'flex',
+    justifyContent: "center",
+    alignItems: 'center'
+
   },
   image2: {
     width: 60,
