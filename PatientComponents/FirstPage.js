@@ -1,7 +1,10 @@
 import * as React from "react";
 import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 function FirstPage() {
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
@@ -18,15 +21,12 @@ function FirstPage() {
           <Image
             resizeMode="contain"
             source={{
-              uri:
-                "https://cdn.builder.io/api/v1/image/assets/TEMP/81bb5f6d512ac51fc5ffce0d23e62c8ecab20f6bfd25f18f3b027454daa2c50b?apiKey=12fbf716322d41b9b96b841cf19d799b&",
+              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/81bb5f6d512ac51fc5ffce0d23e62c8ecab20f6bfd25f18f3b027454daa2c50b?apiKey=12fbf716322d41b9b96b841cf19d799b&",
             }}
             style={styles.image2}
           />
         </View>
-        <View style={styles.row2}>
-          
-        </View>
+        <View style={styles.row2}></View>
         <Text style={styles.greeting}>
           <Text style={styles.bold}>Good morning,</Text>
           {"\n"}
@@ -35,68 +35,77 @@ function FirstPage() {
         <Image
           resizeMode="contain"
           source={{
-            uri:
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/989244dd22d3e2c02298623ed6d057080c307886f296d182b60446f3052d69c8?apiKey=12fbf716322d41b9b96b841cf19d799b&",
+            uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/989244dd22d3e2c02298623ed6d057080c307886f296d182b60446f3052d69c8?apiKey=12fbf716322d41b9b96b841cf19d799b&",
           }}
           style={styles.image5}
         />
-        <View style={styles.row3}>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Self Diagnostics</Text>
-            <View style={styles.cardContent}>
-              <Text style={styles.cardText}>Take the test</Text>
-              
-            </View>
-          </View>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Manage Appointments</Text>
-            <View style={styles.cardContent}>
-              <Text style={styles.cardText}>View and book</Text>
-              
-            </View>
-          </View>
-        </View>
-        <View style={styles.row3}>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Educational Hub </Text>
-            <View style={styles.cardContent}>
-              <Text style={styles.cardText}>Find Helpful Blogs</Text>
-              
-            </View>
-          </View>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Dementia Bot</Text>
-            <View style={styles.cardContent}>
-              <Text style={styles.cardText}>Personal assistance</Text>
-              
-            </View>
+        <View style={styles.cardset}>
+          <View style={styles.row3}>
+            <TouchableOpacity>
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Self-Diagnostics</Text>
+                <View style={styles.cardContent}>
+                  <Text style={styles.cardText}>Take the test</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Appointments</Text>
+                <View style={styles.cardContent}>
+                  <Text style={styles.cardText}>View and book</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.row3}>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Memory Games</Text>
-            <View style={styles.cardContent}>
-              <Text style={styles.cardText}>Stimulate Cognitive ability</Text>
-              
+          <TouchableOpacity>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>Educational Hub</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Find Helpful Blogs</Text>
+              </View>
             </View>
-          </View>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Take me Home</Text>
-            <View style={styles.cardContent}>
-              <Text style={styles.cardText}>Find my way back</Text>
-              
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>Dementia Bot</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Personal assistance</Text>
+              </View>
             </View>
-          </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row3}>
+          <TouchableOpacity>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>Memory Games</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Stimulate Cognitive ability</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>Take me Home</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Find my way back</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.row4}>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Emergency SOS</Text>
-            <View style={styles.cardContent}>
-              <Text style={styles.cardText}>Need Help?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("EmergencySos")}>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>Emergency SOS</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Need Help?</Text>
+              </View>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
-        
+
         {/* <View style={styles.bottom}>
           <View style={styles.nav}>
             <Image
@@ -160,29 +169,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 16,
   },
+  cardset: {
+    display: "flex",
+    width: '100%'
+  },
   row1: {
     flexDirection: "row",
     justifyContent: "space-between",
-    maxWidth: 355,
+    // maxWidth: 355,
     width: "100%",
     paddingHorizontal: 16,
-    height: 30
+    height: 30,
   },
   row2: {
     flexDirection: "row",
     justifyContent: "space-between",
-    maxWidth: 355,
+    // maxWidth: 355,
     width: "100%",
     paddingHorizontal: 16,
   },
   row3: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    maxWidth: 355,
+    justifyContent: "space-around",
+    // maxWidth: 355,
     width: "100%",
     // paddingHorizontal: 16,
     marginTop: 22,
-
   },
   row4: {
     flexDirection: "row",
@@ -197,10 +209,9 @@ const styles = StyleSheet.create({
     height: "100%",
     fontFamily: "Gelion, sans-serif",
     fontSize: 15,
-    display: 'flex',
+    display: "flex",
     justifyContent: "center",
-    alignItems: 'center'
-
+    alignItems: "center",
   },
   image2: {
     width: 60,
@@ -222,14 +233,14 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   greeting: {
-      width: "100%",
+    width: "100%",
     color: "#5D45DB",
     fontSize: 24,
     lineHeight: 50,
     textAlign: "left",
     padding: 20,
     fontFamily: "Gelion, sans-serif",
-    fontSize: "xxx-large"
+    fontSize: "xxx-large",
   },
   image5: {
     width: "100%",
@@ -243,7 +254,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "rgba(93, 69, 219, 1)",
     backgroundColor: "#F7F7F7",
-    width: "48%",
+    width: "100%",
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
@@ -251,7 +262,7 @@ const styles = StyleSheet.create({
     color: "#5D45DB",
     fontSize: 16,
     fontFamily: "Gelion, sans-serif",
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   cardContent: {
     flexDirection: "row",
@@ -262,8 +273,7 @@ const styles = StyleSheet.create({
     color: "#5D45DB",
     fontSize: 12,
     fontFamily: "Gelion, sans-serif",
-    fontWeight: "bold"
-
+    fontWeight: "bold",
   },
   image6: {
     width: 20,
@@ -281,7 +291,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginTop: 40,
     marginBottom: 16,
-    fontFamily: "Mulish, sans-serif",
+    fontFamily: "Gelion, sans-serif",
   },
   calendar: {
     width: "100%",
@@ -295,7 +305,7 @@ const styles = StyleSheet.create({
   monthText: {
     color: "#5D45DB",
     fontSize: 16,
-    fontFamily: "Mulish, sans-serif",
+    fontFamily: "Gelion, sans-serif",
   },
   days: {
     flexDirection: "row",
@@ -316,7 +326,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "left",
     marginTop: 40,
-    fontFamily: "Mulish, sans-serif",
+    fontFamily: "Gelion, sans-serif",
   },
   description: {
     color: "#5D45DB",
@@ -326,7 +336,7 @@ const styles = StyleSheet.create({
     maxWidth: 440,
     width: "100%",
     paddingHorizontal: 20,
-    fontFamily: "Mulish, sans-serif",
+    fontFamily: "Gelion, sans-serif",
   },
   bottom: {
     flexDirection: "row",
@@ -348,7 +358,7 @@ const styles = StyleSheet.create({
     color: "#5D45DB",
     fontSize: 16,
     marginLeft: 8,
-    fontFamily: "Mulish, sans-serif",
+    fontFamily: "Gelion, sans-serif",
   },
   sos: {
     color: "#5D45DB",
