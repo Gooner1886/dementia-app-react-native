@@ -8,15 +8,17 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 function EmergencySos() {
+    const navigation = useNavigation();
   return (
     <View style={styles.sosPage}>
       <View style={styles.headerText}>
         <Text style={styles.text}>Need Help?</Text>
       </View>
       <View style={styles.buttonSection}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EmergencySos2')}>
           <Text style={styles.text1}>Emergency Call</Text>
         </TouchableOpacity>
       </View>

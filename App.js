@@ -8,6 +8,7 @@ import LoginCaregiver from './LoginCaregiver';
 import LoginPatient from './LoginPatient';
 import FirstPagePatient from './PatientComponents/FirstPage';
 import EmergencySos from './PatientComponents/EmergencySos';
+import EmergencySos2 from './PatientComponents/EmergencySos2';
 
 
 const Stack = createStackNavigator();
@@ -22,6 +23,7 @@ const App = () => {
         <Stack.Screen name="LoginPatient" component={LoginPatient}  />
         <Stack.Screen name="FirstPagePatient" component={FirstPagePatient}  />
         <Stack.Screen name="EmergencySos" component={EmergencySos}  />
+        <Stack.Screen name="EmergencySos2" component={EmergencySos2}  />
       </Stack.Navigator>
     </NavigationContainer>
   );
