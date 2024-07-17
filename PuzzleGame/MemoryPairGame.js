@@ -90,8 +90,7 @@ const MemoryPairGame = () => {
       setGameWon(true);
     }
   }, [matches]);
-  const msg = `Matches: ${matches} /
-			${cards.length / 2}`;
+  const msg = `Matches: ${matches} / ${cards.length / 2}`;
   return (
     <View style={styles.container}>
       <Text style={styles.header1}>Memory Pair Game</Text>
@@ -115,7 +114,7 @@ const MemoryPairGame = () => {
         </View>
       ) : (
         <LinearGradient
-          colors={["#6190e8", "#ffffff", "#5D45DB"]}
+          colors={["#6190e8", "#ffffff", "#f64f59"]}
           locations={[0, 0.6, 1]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
@@ -139,14 +138,15 @@ const MemoryPairGame = () => {
       <View style={styles.fixToText}>
         <Icon.Button
           name="home"
-          backgroundColor="#3b5998"
+          backgroundColor="#5D45DB"
           onPress={() => Alert.alert("Home button pressed")}
         >
           Home
         </Icon.Button>
+
         <Icon.Button
           name="repeat"
-          backgroundColor="#3b5998"
+          backgroundColor="#5D45DB"
           onPress={() => {
             setCards(gameCardsFunction());
             setSelectedCards([]);
@@ -177,18 +177,23 @@ const styles = StyleSheet.create({
   },
   header1: {
     fontSize: 36,
-    marginBottom: 10,
+    lineHeight: 42,
+    fontWeight: "600",
+    fontFamily: "Gelion, sans-serif",
+    textAlign: "center",
     color: "green",
+    marginBottom: 10,
   },
   header2: {
-    fontSize: 18,
-    marginBottom: 20,
+    fontSize: 12,
+    marginBottom: 15,
     color: "black",
     fontWeight: "bold",
   },
   matchText: {
     fontSize: 18,
     color: "black",
+    marginBottom: 10,
   },
   board: {
     borderRadius: 5,
