@@ -49,7 +49,7 @@ function FirstPage() {
                 </View>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('CalenderView')}>
               <View style={styles.card}>
                 <Text style={styles.cardTitle}>Appointments</Text>
                 <View style={styles.cardContent}>
