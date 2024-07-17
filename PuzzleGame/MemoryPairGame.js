@@ -115,7 +115,7 @@ const MemoryPairGame = () => {
         </View>
       ) : (
         <LinearGradient
-          colors={["#6f00fc", "#fc7900", "#fcc700"]}
+          colors={["#6190e8", "#ffffff", "#5D45DB"]}
           locations={[0, 0.6, 1]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
