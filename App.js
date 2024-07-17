@@ -7,6 +7,7 @@ import ChooseRole from './ChooseRole';
 import LoginCaregiver from './LoginCaregiver';
 import LoginPatient from './LoginPatient';
 import FirstPagePatient from './PatientComponents/FirstPage';
+import MemoryPairGame from './PuzzleGame/MemoryPairGame';
 
 
 const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ const App = () => {
         <Stack.Screen name="LoginCaregiver" component={LoginCaregiver}  />
         <Stack.Screen name="LoginPatient" component={LoginPatient}  />
         <Stack.Screen name="FirstPagePatient" component={FirstPagePatient}  />
+        <Stack.Screen name="PuzzleGame" component={MemoryPairGame}  />
       </Stack.Navigator>
     </NavigationContainer>
   );

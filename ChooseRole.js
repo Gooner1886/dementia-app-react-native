@@ -19,12 +19,16 @@ function ChooseRole() {
           }}
           style={styles.image}
         />
+       <Pressable style={styles.button} onPress={() => navigation.navigate('PuzzleGame')}>
+          <Text style={styles.buttonText}>Puzzle Game</Text>
+        </Pressable>
        <Pressable style={styles.button} onPress={() => navigation.navigate('LoginCaregiver')}>
           <Text style={styles.buttonText}>Caregiver</Text>
         </Pressable>
         <Pressable style={styles.button} onPress={() => navigation.navigate('LoginPatient')}>
           <Text style={styles.buttonText}>Patient</Text>
         </Pressable>
+
       </View>
     </View>
   );
