@@ -11,6 +11,9 @@ import Survey from "./PatientComponents/Survey";
 import Survey2 from "./PatientComponents/Survey2";
 import Survey3 from "./PatientComponents/Survey3";
 import DiagnosisOptions from "./PatientComponents/DiagnosisOptions";
+import CookieTheft from './PatientComponents/CookieTheft';
+// import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +30,7 @@ const App = () => {
         <Stack.Screen name="Survey" component={Survey} />
         <Stack.Screen name="Survey2" component={Survey2} />
         <Stack.Screen name="Survey3" component={Survey3} />
+        <Stack.Screen name="CookieTheft" component={CookieTheft} />
       </Stack.Navigator>
     </NavigationContainer>
   );
