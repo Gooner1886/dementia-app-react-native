@@ -16,9 +16,7 @@ function LoginPatient() {
     <View style={styles.container}>
       <Image
         resizeMode="contain"
-        source={{
-          uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/92c428dedd8aab43796d641e5e01988193cdf95c8b92feb38e3c5b789749e6c3?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-        }}
+        source={require('./assets/login.png')}
         style={styles.image}
       />
       <View style={styles.content}>
@@ -30,7 +28,7 @@ function LoginPatient() {
           <TextInput style={styles.input} keyboardType="number-pad" secureTextEntry />
         </View>
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPagePatient')}>
+          <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPage')}>
             <Text style={styles.buttonText}>Login</Text>
           </Pressable>
         </View>
@@ -50,6 +48,7 @@ const styles = StyleSheet.create({
     width: "100%",
     aspectRatio: 2,
     marginBottom: 20,
+    marginTop: -270
   },
   content: {
     width: '80%', // Adjust width as per your design needs
