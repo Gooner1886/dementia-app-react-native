@@ -30,7 +30,7 @@ function LoginPatient() {
           <TextInput style={styles.input} keyboardType="number-pad" secureTextEntry />
         </View>
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPagePatient')}>
+          <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPage')}>
             <Text style={styles.buttonText}>Login</Text>
           </Pressable>
         </View>
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     width: "100%",
     aspectRatio: 2,
     marginBottom: 20,
+    marginTop: -270
   },
   content: {
     width: '80%', // Adjust width as per your design needs
