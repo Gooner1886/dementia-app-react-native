@@ -12,6 +12,7 @@ import MemoryPairGame from './PuzzleGame/MemoryPairGame';
 import SOS from './sos/SOS';
 import { app, firestore, auth, db } from './firebaseConfig';
 import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
+import DementiaBot from './DementiaBot';
 
 
 
@@ -46,6 +47,8 @@ const App = () => {
         <Stack.Screen name="FirstPageCaregiver" component={FirstPageCaregiver}  />
         <Stack.Screen name="PuzzleGame" component={MemoryPairGame}  />
         <Stack.Screen name="SOS" component={SOS}  />
+        <Stack.Screen name="DementiaBot" component={DementiaBot}  />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

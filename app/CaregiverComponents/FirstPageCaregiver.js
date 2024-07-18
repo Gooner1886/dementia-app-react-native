@@ -3,6 +3,7 @@ import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+
 function FirstPageCaregiver() {
   const navigation = useNavigation();
   return (
@@ -64,7 +65,7 @@ function FirstPageCaregiver() {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {navigation.navigate('DementiaBot')}}>
             <View style={styles.card}>
               <Text style={styles.cardTitle}>KnowDementia Bot</Text>
               <View style={styles.cardContent}>
