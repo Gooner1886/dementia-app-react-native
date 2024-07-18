@@ -28,7 +28,7 @@ export default function LandingPage() {
       <View style={styles.view3}>
         <Pressable
           style={styles.view4}
-          onPress={() => navigation.navigate("ChooseRole")}
+          onPress={() => navigation.navigate("DementiaBot")}
         >
           <Text style={styles.text2}>Start your journey</Text>
         </Pressable>

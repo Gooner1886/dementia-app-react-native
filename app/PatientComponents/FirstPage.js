@@ -68,7 +68,7 @@ function FirstPage() {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("DementiaBot")}>
             <View style={styles.card}>
               <Text style={styles.cardTitle}>Dementia Bot</Text>
               <View style={styles.cardContent}>
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   },
   cardset: {
     display: "flex",
-    width: '100%'
+    width: "100%",
   },
   row1: {
     flexDirection: "row",
