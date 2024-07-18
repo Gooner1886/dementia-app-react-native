@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   chat: {
-    height: "100%",
+    height: "90%",
     border: "1px solid #5d45db",
     fontFamily: "Gelion, sans-serif",
   },
