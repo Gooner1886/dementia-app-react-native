@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     width: "100%",
     aspectRatio: 2,
     marginBottom: 20,
+    marginTop: -270
   },
   content: {
     width: '80%', // Adjust width as per your design needs

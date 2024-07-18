@@ -12,9 +12,11 @@ const AddPatient = () => {
   const [clinicAddress, setClinicAddress] = useState('');
   const [familyContactNo, setFamilyContactNo] = useState('');
   const [report, setReport] = useState(null);
+  const [reportUploaded, setReportUploaded] = useState(false);
 
   const handleReportUpload = async () => {
     let result = await DocumentPicker.getDocumentAsync({});
+    setReportUploaded(true);
     if (result.type === 'success') {
       setReport(result.uri);
     }
@@ -52,15 +54,15 @@ const AddPatient = () => {
         <RadioButton.Group onValueChange={setGender} value={gender}>
           <View style={styles.radioButton}>
             <RadioButton value="male" />
-            <Text>Male</Text>
+            <Text style={styles.radioText}>Male</Text>
           </View>
           <View style={styles.radioButton}>
             <RadioButton value="female" />
-            <Text>Female</Text>
+            <Text style={styles.radioText}>Female</Text>
           </View>
           <View style={styles.radioButton}>
             <RadioButton value="other" />
-            <Text>Other</Text>
+            <Text style={styles.radioText}>Other</Text>
           </View>
         </RadioButton.Group>
       </View>
@@ -86,7 +88,7 @@ const AddPatient = () => {
       <TouchableOpacity style={styles.button} onPress={handleReportUpload}>
         <Text style={styles.buttonText}>Upload Report</Text>
       </TouchableOpacity>
-      {/* {report && <Text style={styles.reportText}>Report uploaded</Text>} */}
+      {reportUploaded && <Text style={styles.reportText}>Report uploaded (Medical_Report.pdf) </Text>}
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
@@ -124,10 +126,15 @@ const styles = StyleSheet.create({
   radioButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    color: '#B5B5B5',
+  },
+  radioText: {
+    color: '#B5B5B5',
   },
   reportText: {
     marginTop: 10,
     fontStyle: 'italic',
+    color: "#B5B5B5",
   },
   button: {
     backgroundColor: '#5D45DB', // Customize the color here
@@ -142,10 +149,10 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: "10%",
+    height: "5%",
     aspectRatio: 2,
     marginBottom: 20,
-    marginLeft: -120,
+    marginLeft: -150,
     marginTop: -25
   }
 });
