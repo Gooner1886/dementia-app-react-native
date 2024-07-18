@@ -1,7 +1,9 @@
 import * as React from "react";
-import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
+import { View, StyleSheet, Image, Text, ScrollView, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import EducationalHub from "./EducationalHub";
 
 function FirstPage() {
   const navigation = useNavigation();
@@ -96,7 +98,7 @@ function FirstPage() {
           </TouchableOpacity>
         </View>
         <View style={styles.row4}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('AddPatient')}>
             <View style={styles.card}>
               <Text style={styles.cardTitle}>Emergency SOS</Text>
               <View style={styles.cardContent}>
