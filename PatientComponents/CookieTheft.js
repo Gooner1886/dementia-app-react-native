@@ -16,6 +16,9 @@ const Alexafeature = () => {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
 
+  const startListening = () => SpeechRecognition.startListening({ continuous: true });
+
+
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
@@ -25,7 +28,7 @@ const Alexafeature = () => {
       <Image source={CookieTheftImage} style={styles.image} />
       <p>Microphone: {listening ? "on" : "off"}</p>
       <TouchableOpacity
-        onPress={SpeechRecognition.startListening}
+        onPress={startListening}
         style={styles.micButton}
       >
         <Icon name="microphone" size={30} color="#FFF" />
