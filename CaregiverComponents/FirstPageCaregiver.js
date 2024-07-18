@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-function FirstPage() {
+function FirstPageCaregiver() {
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.scrollView}>
@@ -43,17 +43,17 @@ function FirstPage() {
           <View style={styles.row3}>
             <TouchableOpacity>
               <View style={styles.card}>
-                <Text style={styles.cardTitle}>Educational Hub</Text>
+                <Text style={styles.cardTitle}>Self-Diagnostics</Text>
                 <View style={styles.cardContent}>
-                  <Text style={styles.cardText}>Find Helpful Blogs</Text>
+                  <Text style={styles.cardText}>Take the test</Text>
                 </View>
               </View>
             </TouchableOpacity>
             <TouchableOpacity>
               <View style={styles.card}>
-                <Text style={styles.cardTitle}>Memory Games</Text>
+                <Text style={styles.cardTitle}>Appointments</Text>
                 <View style={styles.cardContent}>
-                  <Text style={styles.cardText}>Cognitive abilities</Text>
+                  <Text style={styles.cardText}>View and book</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -62,21 +62,50 @@ function FirstPage() {
         <View style={styles.row3}>
           <TouchableOpacity>
             <View style={styles.card}>
-              <Text style={styles.cardTitle}>Emergency SOS</Text>
+              <Text style={styles.cardTitle}>Educational Hub</Text>
               <View style={styles.cardContent}>
-                <Text style={styles.cardText}>Need Help?</Text>
+                <Text style={styles.cardText}>Find Helpful Blogs</Text>
               </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
             <View style={styles.card}>
-              <Text style={styles.cardTitle}>Take me Home</Text>
+              <Text style={styles.cardTitle}>KnowDementia Bot</Text>
               <View style={styles.cardContent}>
-                <Text style={styles.cardText}>Find my way back</Text>
+                <Text style={styles.cardText}>Questions answered</Text>
               </View>
             </View>
           </TouchableOpacity>
         </View>
+        <View style={styles.row3}>
+          <TouchableOpacity>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>Add Patient</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Handle Patient List</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>Make Collage</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Reenforce Memories</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row4}>
+          <TouchableOpacity>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>MedicoBot</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Upload reports</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
+
         {/* <View style={styles.bottom}>
           <View style={styles.nav}>
             <Image
@@ -142,8 +171,7 @@ const styles = StyleSheet.create({
   },
   cardset: {
     display: "flex",
-    width: '100%',
-    // flexDirection: 'column'
+    width: '100%'
   },
   row1: {
     flexDirection: "row",
@@ -341,4 +369,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FirstPage;
+export default FirstPageCaregiver;

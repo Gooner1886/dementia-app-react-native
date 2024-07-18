@@ -11,9 +11,9 @@ import {
 import { useNavigation } from '@react-navigation/native';
 
 
-const windowWidth = Dimensions.get('window').width;
+// const windowWidth = Dimensions.get('window').width;
 
-function Login() {
+function LoginCaregiver() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -32,7 +32,7 @@ function Login() {
           <Text style={styles.label}>Password</Text>
           <TextInput style={styles.input} secureTextEntry />
         </View>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPageCaregiver')}>
           <Text style={styles.buttonText}>Login</Text>
         </Pressable>
         <View style={styles.footer}>
@@ -144,4 +144,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default LoginCaregiver;
