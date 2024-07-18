@@ -30,7 +30,7 @@ function LoginPatient() {
           <TextInput style={styles.input} keyboardType="number-pad" secureTextEntry />
         </View>
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPage')}>
+          <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPagePatient')}>
             <Text style={styles.buttonText}>Login</Text>
           </Pressable>
         </View>

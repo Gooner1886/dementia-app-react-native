@@ -14,6 +14,7 @@ import DiagnosisOptions from "./PatientComponents/DiagnosisOptions";
 import CookieTheft from './PatientComponents/CookieTheft';
 // import "core-js/stable";
 import "regenerator-runtime/runtime";
+import FirstPageCaregiver from './CaregiverComponents/FirstPageCaregiver';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ const App = () => {
         <Stack.Screen name="Survey2" component={Survey2} />
         <Stack.Screen name="Survey3" component={Survey3} />
         <Stack.Screen name="CookieTheft" component={CookieTheft} />
+        <Stack.Screen name="FirstPageCaregiver" component={FirstPageCaregiver} />
       </Stack.Navigator>
     </NavigationContainer>
   );
