@@ -7,7 +7,7 @@ import ChooseRole from './ChooseRole';
 import LoginCaregiver from './LoginCaregiver';
 import LoginPatient from './LoginPatient';
 import FirstPage from './PatientComponents/FirstPage';
-import FirstPageCaregiver from './CaregiverComponents/FirstPageCaregiver';
+import FirstPageCaregiver from '../CaregiverComponents/FirstPageCaregiver';
 import MemoryPairGame from './PuzzleGame/MemoryPairGame';
 import SOS from './sos/SOS';
 import { app, firestore, auth, db } from './firebaseConfig';
