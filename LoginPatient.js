@@ -16,9 +16,7 @@ function LoginPatient() {
     <View style={styles.container}>
       <Image
         resizeMode="contain"
-        source={{
-          uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/92c428dedd8aab43796d641e5e01988193cdf95c8b92feb38e3c5b789749e6c3?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-        }}
+        source={require('./assets/login.png')}
         style={styles.image}
       />
       <View style={styles.content}>

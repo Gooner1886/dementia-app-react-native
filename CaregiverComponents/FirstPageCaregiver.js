@@ -8,24 +8,22 @@ function FirstPageCaregiver() {
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
-        <View style={styles.row1}>
-          {/* <Image
+        {/* <View style={styles.row1}>
+          <Image
             resizeMode="contain"
             source={{
               uri:
                 "https://cdn.builder.io/api/v1/image/assets/TEMP/960648d5d882e437ca59f98ea36ff6194169a3e18d689a1f03c6029a310abdaa?apiKey=12fbf716322d41b9b96b841cf19d799b&",
             }}
             style={styles.image1}
-          /> */}
+          />
           <Text style={styles.image1}>9:41</Text>
           <Image
             resizeMode="contain"
-            source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/81bb5f6d512ac51fc5ffce0d23e62c8ecab20f6bfd25f18f3b027454daa2c50b?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-            }}
+            source={require('../assets/network.png')}
             style={styles.image2}
           />
-        </View>
+        </View> */}
         <View style={styles.row2}></View>
         <Text style={styles.greeting}>
           <Text style={styles.bold}>Good morning,</Text>
@@ -34,9 +32,7 @@ function FirstPageCaregiver() {
         </Text>
         <Image
           resizeMode="contain"
-          source={{
-            uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/989244dd22d3e2c02298623ed6d057080c307886f296d182b60446f3052d69c8?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-          }}
+          source={require('../assets/first_page.png')}
           style={styles.image5}
         />
         <View style={styles.cardset}>
@@ -240,7 +236,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     padding: 20,
     fontFamily: "Gelion, sans-serif",
-    fontSize: "xxx-large",
+    // fontSize: "xxx-large",
   },
   image5: {
     width: "100%",

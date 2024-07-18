@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
+    "@react-native-firebase/app": "latest",
+    "@react-native-firebase/firestore": "latest",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.4.0",
     "expo": "~51.0.20",
+    "expo-font": "^12.0.9",
+    "expo-linear-gradient": "~13.0.2",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -20,6 +24,7 @@
     "react-native-gesture-handler": "^2.17.1",
     "react-native-reanimated": "^3.14.0",
     "react-native-snap-carousel": "^3.9.1",
+    "react-native-vector-icons": "^10.1.0",
     "react-native-web": "~0.19.10",
     "use-latest-callback": "^0.2.1"
   },
