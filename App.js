@@ -7,6 +7,7 @@ import ChooseRole from './ChooseRole';
 import LoginCaregiver from './LoginCaregiver';
 import LoginPatient from './LoginPatient';
 import FirstPage from './PatientComponents/FirstPage';
+import FirstPageCaregiver from './CaregiverComponents/FirstPageCaregiver';
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Screen name="LoginPatient" component={LoginPatient}  />
         <Stack.Screen name="LoginCaregiver" component={LoginCaregiver}  />
         <Stack.Screen name="FirstPage" component={FirstPage}  />
+        <Stack.Screen name="FirstPageCaregiver" component={FirstPageCaregiver}  />
       </Stack.Navigator>
     </NavigationContainer>
   );

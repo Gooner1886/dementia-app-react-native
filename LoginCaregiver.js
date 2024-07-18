@@ -32,7 +32,7 @@ function LoginCaregiver() {
           <Text style={styles.label}>Password</Text>
           <TextInput style={styles.input} secureTextEntry />
         </View>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPage')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPageCaregiver')}>
           <Text style={styles.buttonText}>Login</Text>
         </Pressable>
         <View style={styles.footer}>
