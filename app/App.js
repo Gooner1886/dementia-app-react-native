@@ -1,5 +1,6 @@
 // App.js
 import React from "react";
+import { LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LandingPage from "./LandingPage";
@@ -33,6 +34,7 @@ import PatientHealthRecordBot from "./PatientHealthRecordBot";
 import CalenderView from "./CalenderView";
 
 const Stack = createStackNavigator();
+LogBox.ignoreAllLogs();
 
 const q = query(collection(firestore, "articles"));
 
