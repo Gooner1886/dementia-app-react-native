@@ -20,15 +20,13 @@ export default function LandingPage() {
       </View>
       <Image
         resizeMode="contain"
-        source={{
-          uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/3f2aeb36a59761efdb68ff635eb71fd69d88e0cac77e3d37ced264985b0da55f?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-        }}
+        source={require('./assets/landing_page.png')}
         style={styles.image1}
       />
       <View style={styles.view3}>
         <Pressable
           style={styles.view4}
-          onPress={() => navigation.navigate("Alexafeature")}
+          onPress={() => navigation.navigate("ChooseRole")}
         >
           <Text style={styles.text2}>Start your journey</Text>
         </Pressable>

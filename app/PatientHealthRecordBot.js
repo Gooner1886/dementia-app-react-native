@@ -5,12 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 import "deep-chat";
 
 function PatientHealthRecordBot() {
-  const navigation = useNavigation();
-  const [showChat, setShowChat] = useState(false);
-  const initialMessages = [
-    { role: "user", text: "Hey, how are you today?" },
-    { role: "ai", text: "I am doing very well!" },
-  ];
   const chatElementRef = useRef(null);
 
   useEffect(() => {
@@ -61,20 +55,24 @@ function PatientHealthRecordBot() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>
-          <Text style={styles.fontMedium}>I am your</Text>
-          <Text style={styles.fontBold}>role</Text>
-        </Text>
-      </View>
-      <View style={styles.content}>
-        <deep-chat
-          introMessage='{"text": "Hi I am your assistant, ask me anything!"}'
-          connect='{"url": "http://127.0.0.1:5000/api/patient-record-chatbot", "method":"POST"}'
-          speechToText='{"webSpeech": true,"translations": {"hello": "goodbye", "Hello": "Goodbye"},"commands": {"resume": "resume", "settings": {"commandMode": "hello"}},"button": {"position": "outside-left"}}'
-        ></deep-chat>
-      </View>
+    <View style={styles.content}>
+      <deep-chat
+        style={styles.chat}
+        messageStyles='{
+        "user": {
+          "shared": {
+            "bubble": {
+              "color": "#fff",
+              "backgroundColor" : "#5d45db",
+              "marginLeft" : 0,
+              "marginRight" : auto
+            }
+          }
+        }'
+        introMessage='{"text": "Hi I am repobot, ask me anything about your patients report!"}'
+        connect='{"url": "http://127.0.0.1:5000/api/patient-record-chatbot", "method":"POST"}'
+        speechToText='{"webSpeech": true,"translations": {"hello": "goodbye", "Hello": "Goodbye"},"commands": {"resume": "resume", "settings": {"commandMode": "hello"}},"button": {"position": "outside-left"}}'
+      ></deep-chat>
     </View>
   );
 }
@@ -139,6 +137,11 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#FFF",
     textAlign: "center",
+  },
+  chat: {
+    height: "90%",
+    border: "1px solid #5d45db",
+    fontFamily: "Gelion, sans-serif",
   },
 });
 

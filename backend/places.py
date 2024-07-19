@@ -30,11 +30,17 @@
 
 import vertexai
 from vertexai.generative_models import GenerativeModel
+from google.oauth2.service_account import Credentials
+
+key_path = 'application_default_credentials.json'
 
 # TODO(developer): Update and un-comment below line
 # project_id = "PROJECT_ID"
 
-vertexai.init(project="hack-team-smriti-empowerers", location="us-central1")
+credentials = Credentials.from_service_account_file(
+    key_path)
+
+vertexai.init(project="hack-team-smriti-empowerers", location="us-central1", credentials=credentials)
 
 model = GenerativeModel("gemini-1.5-pro")
 

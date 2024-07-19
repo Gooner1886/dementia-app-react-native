@@ -14,9 +14,7 @@ function ChooseRole() {
       </View>
       <View style={styles.content}>
         <Image
-          source={{
-            uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/34bfdc475ecd25d3077a33b267d65a802a32ccbb0969bf35394d8bfed741df15?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-          }}
+          source={require('./assets/landing_role.png')}
           style={styles.image}
         />
        <Pressable style={styles.button} onPress={() => navigation.navigate('LoginCaregiver')}>

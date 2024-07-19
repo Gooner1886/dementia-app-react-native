@@ -17,6 +17,7 @@ const Alexafeature = () => {
     const resp = await axios.post("http://127.0.0.1:5000/api/get-calender", {
       transcript: transcript,
     });
+    
     console.log(resp);
   };
 

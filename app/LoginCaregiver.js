@@ -11,17 +11,15 @@ import {
 import { useNavigation } from '@react-navigation/native';
 
 
-const windowWidth = Dimensions.get('window').width;
+// const windowWidth = Dimensions.get('window').width;
 
-function Login() {
+function LoginCaregiver() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image
         resizeMode="contain"
-        source={{
-          uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/40b9ec94e7a7006c0ec0ee531e533c5526f44760455a46f3eaca10a26171fe6e?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-        }}
+        source={require('./assets/login.png')}
         style={styles.image}
       />
       <View style={styles.content}>
@@ -32,7 +30,7 @@ function Login() {
           <Text style={styles.label}>Password</Text>
           <TextInput style={styles.input} secureTextEntry />
         </View>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('FirstPageCaregiver')}>
           <Text style={styles.buttonText}>Login</Text>
         </Pressable>
         <View style={styles.footer}>
@@ -40,9 +38,7 @@ function Login() {
           <Text style={styles.text}>or continue with</Text>
           <Pressable style={styles.googleButton}>
             <Image
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/b7207ea8accd0da35e3298c09353db2805e038e78706b8332393f4983c2dbcef?apiKey=12fbf716322d41b9b96b841cf19d799b&",
-              }}
+              source={require('./assets/google.png')}
               style={styles.googleImage}
             />
             <Text style={styles.googleButtonText}>Sign in with Google</Text>
@@ -144,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default LoginCaregiver;
