@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontFamily: "Gelion, sans-serif",
     textAlign: "center",
-    color: "green",
+    color: "#5d45db",
     marginBottom: 10,
   },
   header2: {
