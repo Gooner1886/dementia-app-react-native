@@ -13,6 +13,11 @@ import SOS from './sos/SOS';
 import { app, firestore, auth, db } from './firebaseConfig';
 import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
 import DementiaBot from './DementiaBot';
+import DiagnosisOptions from './CaregiverComponents/DiagnosisOptions';
+import CookieTheft from './CaregiverComponents/CookieTheft';
+import Survey from './CaregiverComponents/Survey';
+import Survey2 from './CaregiverComponents/Survey2';
+import Survey3 from './CaregiverComponents/Survey3';
 
 
 
@@ -48,7 +53,11 @@ const App = () => {
         <Stack.Screen name="PuzzleGame" component={MemoryPairGame}  />
         <Stack.Screen name="SOS" component={SOS}  />
         <Stack.Screen name="DementiaBot" component={DementiaBot}  />
-        
+        <Stack.Screen name="DiagnosisOptions" component={DiagnosisOptions} />
+        <Stack.Screen name="Survey" component={Survey} />
+        <Stack.Screen name="Survey2" component={Survey2} />
+        <Stack.Screen name="Survey3" component={Survey3} />
+        <Stack.Screen name="CookieTheft" component={CookieTheft} />
       </Stack.Navigator>
     </NavigationContainer>
   );

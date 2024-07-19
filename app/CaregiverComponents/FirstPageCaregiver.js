@@ -38,7 +38,7 @@ function FirstPageCaregiver() {
         />
         <View style={styles.cardset}>
           <View style={styles.row3}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('DiagnosisOptions')}>
               <View style={styles.card}>
                 <Text style={styles.cardTitle}>Self-Diagnostics</Text>
                 <View style={styles.cardContent}>
