@@ -18,6 +18,7 @@ import CookieTheft from './CaregiverComponents/CookieTheft';
 import Survey from './CaregiverComponents/Survey';
 import Survey2 from './CaregiverComponents/Survey2';
 import Survey3 from './CaregiverComponents/Survey3';
+import AddPatient from './CaregiverComponents/AddPatient';
 
 
 
@@ -58,6 +59,7 @@ const App = () => {
         <Stack.Screen name="Survey2" component={Survey2} />
         <Stack.Screen name="Survey3" component={Survey3} />
         <Stack.Screen name="CookieTheft" component={CookieTheft} />
+        <Stack.Screen name="AddPatient" component={AddPatient}  />
       </Stack.Navigator>
     </NavigationContainer>
   );

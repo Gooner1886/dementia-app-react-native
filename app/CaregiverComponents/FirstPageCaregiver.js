@@ -75,7 +75,7 @@ function FirstPageCaregiver() {
           </TouchableOpacity>
         </View>
         <View style={styles.row3}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {navigation.navigate('AddPatient')}}>
             <View style={styles.card}>
               <Text style={styles.cardTitle}>Add Patient</Text>
               <View style={styles.cardContent}>

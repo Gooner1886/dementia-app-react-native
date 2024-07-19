@@ -60,12 +60,12 @@ export default class SOS extends Component {
 					</View>
 
 					<View style={styles.content}>
-						<View style={styles.heyTitleContainer}>
+						{/* <View style={styles.heyTitleContainer}>
 							<Text style={styles.heytite}>HEY</Text>
-						</View>
+						</View> */}
 
 						<View style={styles.textContainer}>
-							<Text style={styles.simtext}>Please tap to the button below if youare in danger</Text>
+							<Text style={styles.simtext}>Hi, please tap to the button below if you are in danger</Text>
 						</View>
 
 						<View style={styles.arrowContainer}>
@@ -100,7 +100,8 @@ const styles = StyleSheet.create({
 	heyTitleContainer: {
 		flex: 0.3,
 	},
-	textContainer: { flex: 1 },
+	textContainer: { flex: 1,
+	justifyContent: 'center' },
 	arrowContainer: { flex: 1.7 },
 
 	statusBar: {
@@ -133,6 +134,7 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		fontWeight: 'bold',
 		textAlign: 'center',
+		fontFamily: 'Gelion, sans-serif'
 	},
 	heytite: {
 		color: '#333333',
@@ -141,10 +143,12 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 	},
 	simtext: {
-		color: '#666666',
+		color: '#5d45db',
 		fontSize: 16,
 		padding: 15,
 		textAlign: 'center',
+		fontFamily: 'Gelion, sans-serif',
+		justifyContent: 'center'
 	},
 	arrow: {
 		opacity: 1,
@@ -155,7 +159,7 @@ const styles = StyleSheet.create({
 		width: 200,
 		height: 200,
 		borderRadius: 200,
-		backgroundColor: '#df1e36',
+		backgroundColor: '#5d45db',
 		justifyContent: 'center',
 		alignItems: 'center',
 
