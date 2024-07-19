@@ -48,7 +48,7 @@ const FamFaces = () => {
           rate={1.0}
           volume={1.0}
           isMuted={false}
-          resizeMode="cover"
+          resizeMode="none"
           shouldPlay
           style={styles.video}
         />
@@ -102,8 +102,11 @@ const styles = StyleSheet.create({
   },
   video: {
     width: 300,
-    height: 200,
+    height: 400,
     marginTop: 20,
+    objectFit: 'cover',
+    overflow: 'auto',
+    position: 'relative'
   },
 });
 
