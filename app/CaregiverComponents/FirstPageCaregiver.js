@@ -101,6 +101,14 @@ function FirstPageCaregiver() {
               </View>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => {navigation.navigate('FamFaces')}}>
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>FamFaces</Text>
+              <View style={styles.cardContent}>
+                <Text style={styles.cardText}>Hear your fam</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
         </View>
 
         {/* <View style={styles.bottom}>
@@ -195,7 +203,7 @@ const styles = StyleSheet.create({
   },
   row4: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-around",
     maxWidth: 355,
     width: "100%",
     // paddingHorizontal: 16,

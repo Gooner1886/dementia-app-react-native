@@ -19,6 +19,7 @@ import Survey from './CaregiverComponents/Survey';
 import Survey2 from './CaregiverComponents/Survey2';
 import Survey3 from './CaregiverComponents/Survey3';
 import AddPatient from './CaregiverComponents/AddPatient';
+import FamFaces from './CaregiverComponents/FamFaces';
 
 
 
@@ -60,6 +61,7 @@ const App = () => {
         <Stack.Screen name="Survey3" component={Survey3} />
         <Stack.Screen name="CookieTheft" component={CookieTheft} />
         <Stack.Screen name="AddPatient" component={AddPatient}  />
+        <Stack.Screen name="FamFaces" component={FamFaces}  />
       </Stack.Navigator>
     </NavigationContainer>
   );
