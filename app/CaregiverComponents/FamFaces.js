@@ -40,7 +40,10 @@ const FamFaces = () => {
         </View>
       </RadioGroup> */}
       <View style={styles.buttonContainer}>
-        <Button title="Submit" color="#5d45db" onPress={handleSubmit} />
+        <Button title="Upload Caregiver Photo" color="#5d45db"  style={styles.buttonstyle}/>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button title="Submit" color="#5d45db" onPress={handleSubmit} style={styles.buttonstyle}/>
       </View>
       {showVideo && (
         <Video
@@ -108,6 +111,9 @@ const styles = StyleSheet.create({
     overflow: 'auto',
     position: 'relative'
   },
+  buttonstyle: {
+    fontFamily: 'Gelion'
+  }
 });
 
 export default FamFaces;

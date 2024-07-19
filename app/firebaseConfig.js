@@ -19,9 +19,8 @@ const firebaseConfig = {
 
   const app = initializeApp(firebaseConfig);
   const firestore = getFirestore(app);
-  const auth = getAuth();
   const db = getDatabase(app);
-  const analytics = getAnalytics(app);
+
   
   // Uncomment the following if you want to use emulator
   // if (process.env.NODE_ENV === "development") {
@@ -29,4 +28,4 @@ const firebaseConfig = {
   //   auth.useEmulator("http://localhost:9099");
   // }
   
-  export { app, firestore, db, auth, analytics };
+  export { app, firestore, db };

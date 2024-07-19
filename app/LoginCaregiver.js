@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   content: {
+    fontFamily: 'Gelion',
     width: '80%', // Adjust the width as per your design needs
     maxWidth: 400, // Maximum width for larger screens
     alignItems: "center",
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
     color: "#5D45DB",
     textAlign: "center",
     marginBottom: 20,
+    fontFamily: 'Gelion'
   },
   inputContainer: {
     width: "100%",
@@ -83,6 +85,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#B5B5B5",
     marginBottom: 8,
+    fontFamily: 'Gelion'
   },
   input: {
     borderWidth: 1,
@@ -104,6 +107,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#FFF",
     fontWeight: "700",
+    fontFamily: 'Gelion'
   },
   footer: {
     alignItems: "center",
@@ -114,11 +118,13 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 16,
     marginBottom: 10,
+    fontFamily: 'Gelion'
   },
   text: {
     color: "#B5B5B5",
     fontSize: 16,
     marginBottom: 10,
+    fontFamily: 'Gelion'
   },
   googleButton: {
     backgroundColor: "#F1F1F1",
@@ -137,6 +143,7 @@ const styles = StyleSheet.create({
   googleButtonText: {
     color: "#000",
     fontWeight: "500",
+    fontFamily: 'Gelion'
   },
 });
 

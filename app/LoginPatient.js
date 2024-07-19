@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     width: '80%', // Adjust width as per your design needs
     maxWidth: 400, // Maximum width for larger screens
     alignItems: "center",
+    fontFamily: 'Gelion'
   },
   title: {
     fontSize: 32,
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     color: "#5D45DB",
     textAlign: "center",
     marginBottom: 20,
+    fontFamily: 'Gelion'
   },
   inputContainer: {
     width: "100%",
@@ -70,6 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#B5B5B5",
     marginBottom: 8,
+    fontFamily: 'Gelion'
   },
   input: {
     borderWidth: 1,
@@ -94,6 +97,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#FFF",
     fontWeight: "700",
+    fontFamily: 'Gelion'
   },
 });
 

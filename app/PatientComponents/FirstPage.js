@@ -19,7 +19,7 @@ function FirstPage() {
         </View> */}
         <View style={styles.row2}></View>
         <Text style={styles.greeting}>
-          <Text style={styles.bold}>Good morning,</Text>
+          <Text style={styles.bold}>Good Morning,</Text>
           {"\n"}
           <Text style={styles.bold}>Ruth</Text>
         </Text>
@@ -30,7 +30,7 @@ function FirstPage() {
         />
         <View style={styles.cardset}>
           <View style={styles.row3}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => (navigation.navigate('CarouselCards'))}>
               <View style={styles.card}>
                 <Text style={styles.cardTitle}>Educational Hub</Text>
                 <View style={styles.cardContent}>
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
   greeting: {
     width: "100%",
     color: "#5D45DB",
-    fontSize: 24,
+    fontSize: 40,
     lineHeight: 50,
     textAlign: "left",
     padding: 20,

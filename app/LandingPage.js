@@ -14,13 +14,14 @@ export default function LandingPage() {
   return (
     <View style={styles.view1}>
       <View style={styles.view2}>
+        <Text style={styles.textSmriti}>Smriti Empowerers</Text>
         <Text style={styles.text1}>
-          where HEALTH meets <Text style={styles.boldText}>tech.</Text>
+          where HEALTH meets <Text style={styles.boldText}>TECH.</Text>
         </Text>
       </View>
       <Image
         resizeMode="contain"
-        source={require('./assets/landing_page.png')}
+        source={require("./assets/landing_page.png")}
         style={styles.image1}
       />
       <View style={styles.view3}>
@@ -57,11 +58,13 @@ const styles = StyleSheet.create({
   },
   text1: {
     color: "#FFF",
-    fontSize: 36,
+    fontSize: 24,
     lineHeight: 42,
     fontWeight: "600",
     fontFamily: "Gelion",
     textAlign: "center",
+    marginRight: 10,
+    marginTop: 10,
   },
   boldText: {
     fontWeight: "700",
@@ -94,4 +97,13 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
+  textSmriti: {
+    color: "#FFF",
+    fontSize: 36,
+    lineHeight: 42,
+    fontWeight: "600",
+    fontFamily: "Gelion",
+    textAlign: "left",
+    marginRight: 50
+  }
 });

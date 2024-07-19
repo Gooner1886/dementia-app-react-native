@@ -10,7 +10,7 @@ import FirstPage from './PatientComponents/FirstPage';
 import FirstPageCaregiver from './CaregiverComponents/FirstPageCaregiver';
 import MemoryPairGame from './PuzzleGame/MemoryPairGame';
 import SOS from './sos/SOS';
-import { app, firestore, auth, db } from './firebaseConfig';
+import { app, firestore, db } from './firebaseConfig';
 import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
 import DementiaBot from './DementiaBot';
 import DiagnosisOptions from './CaregiverComponents/DiagnosisOptions';
@@ -21,6 +21,7 @@ import Survey3 from './CaregiverComponents/Survey3';
 import AddPatient from './CaregiverComponents/AddPatient';
 import FamFaces from './CaregiverComponents/FamFaces';
 import MediaPicker from './CaregiverComponents/MediaPicker';
+import CarouselCards from './CaregiverComponents/CarouselCard'
 import * as Font from 'expo-font';
 
 
@@ -76,6 +77,7 @@ const App = () => {
         <Stack.Screen name="AddPatient" component={AddPatient}  />
         <Stack.Screen name="FamFaces" component={FamFaces}  />
         <Stack.Screen name="MediaPicker" component={MediaPicker}  />
+        <Stack.Screen name="CarouselCards" component={CarouselCards}  />
       </Stack.Navigator>
     </NavigationContainer>
   );

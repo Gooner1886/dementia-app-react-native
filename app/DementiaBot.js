@@ -65,13 +65,7 @@ function DementiaBot() {
       <deep-chat
         style={styles.chat}
         messageStyles='{
-        "user": {
-          "shared": {
-            "bubble": {
-              "color": "#fff",
-              "backgroundColor" : "#5d45db",
-              "marginLeft" : 0,
-              "marginRight" : auto
+        "user": { "shared": { "bubble": { "color": "#fff", "backgroundColor" : "#5d45db", "marginLeft" : 0, "marginRight" : auto
             }
           }
         }'
