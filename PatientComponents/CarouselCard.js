@@ -12,6 +12,9 @@ const CarouselCards = () => {
   const videoSource = 'https://www.youtube.com/watch?v=loksPQ7Q8tM&pp=ygUIZGVtZW50aWE%3D';  
   const videoId = 'https://www.youtube.com/watch?v=loksPQ7Q8tM&pp=ygUIZGVtZW50aWE%3D'; // Replace with your YouTube video ID
 
+  const renderItem = ({ item, index }) => {
+    return <CarouselCardItem item={item} index={index} />;
+  };
   return (
     <ScrollView>
     <View style={styles.carouselContainer}>
@@ -20,7 +23,7 @@ const CarouselCards = () => {
         layoutCardOffset={9}
         ref={isCarousel}
         data={data}
-        renderItem={CarouselCardItem}
+        renderItem={renderItem}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
         onSnapToItem={(index) => setIndex(index)}
@@ -42,7 +45,7 @@ const CarouselCards = () => {
 
 const styles = StyleSheet.create({
   carouselContainer: {
-    marginTop: 20,
+    marginTop: 170,
   },
   dotStyle: {
     width: 10,

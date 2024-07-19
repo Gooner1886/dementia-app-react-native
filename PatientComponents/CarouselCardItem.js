@@ -1,19 +1,35 @@
-import React from 'react';
-import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
+import CarouselPopWindow from './CarouselPopWindow';
 
 const { width: windowWidth } = Dimensions.get('window');
 export const SLIDER_WIDTH = windowWidth;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 
 const CarouselCardItem = ({ item, index }) => {
+
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handlePress = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <View style={styles.container} key={index}>
-      <Image
-        source={{ uri: item.imgUrl }}
-        style={styles.image}
-      />
-      <Text style={styles.header}>{item.title}</Text>
-      <Text style={styles.body}>{item.body}</Text>
+      <TouchableOpacity onPress={handlePress}>
+        <Image
+          source={{ uri: item.imgUrl }}
+          style={styles.image}
+        />
+        <Text style={styles.header}>{item.title}</Text>
+        <Text style={styles.body}>{item.body}</Text>
+      </TouchableOpacity>
+      <CarouselPopWindow item={item} visible={showPopup} onClose={handleClosePopup} />
     </View>
   );
 };
@@ -23,6 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 8,
     width: ITEM_WIDTH,
+
     paddingBottom: 40,
     shadowColor: '#000',
     shadowOffset: {

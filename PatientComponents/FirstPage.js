@@ -60,7 +60,7 @@ function FirstPage() {
           </View>
         </View>
         <View style={styles.row3}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('CarouselCards')}>
             <View style={styles.card}>
               <Text style={styles.cardTitle}>Educational Hub</Text>
               <View style={styles.cardContent}>
