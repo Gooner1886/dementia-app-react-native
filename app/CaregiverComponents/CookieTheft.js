@@ -1,14 +1,24 @@
 import "regenerator-runtime/runtime";
-import React from "react";
+import React, { useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import CookieTheftImage from '../assets/CookieTheftImage1.jpg'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+} from "react-native";
+import CookieTheftImage from "../assets/CookieTheftImage1.jpg";
+import Icon from "react-native-vector-icons/FontAwesome";
+import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 const CookieTheft = () => {
+  const navigation = useNavigation();
   const {
     transcript,
     listening,
@@ -16,8 +26,23 @@ const CookieTheft = () => {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
 
-  const startListening = () => SpeechRecognition.startListening({ continuous: true });
+  const startListening = () =>
+    SpeechRecognition.startListening({ continuous: true });
 
+  const stopListening = () => SpeechRecognition.stopListening();
+
+  const [gotVal, setGotval] = useState(3);
+
+  const submitTranscript = async () => {
+    stopListening();
+    console.log(transcript);
+    const resp = await axios.post("http://127.0.0.1:5000/api/cookie-theft", {
+      transcript: transcript,
+    });
+    console.log(resp);
+    if (resp.data.level == 1) setGotval(1);
+    else setGotval(2);
+  };
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -27,21 +52,30 @@ const CookieTheft = () => {
     <View style={styles.container}>
       <Image source={CookieTheftImage} style={styles.image} />
       <p>Microphone: {listening ? "on" : "off"}</p>
-      <TouchableOpacity
-        onPress={startListening}
-        style={styles.micButton}
-      >
+      <TouchableOpacity onPress={startListening} style={styles.micButton}>
         <Icon name="microphone" size={30} color="#FFF" />
       </TouchableOpacity>
       {/* <button onClick={SpeechRecognition.startListening}>Start</button> */}
-      <button onClick={SpeechRecognition.stopListening} style={styles.button}>Stop</button>
-      <button onClick={resetTranscript} style={styles.button}>Reset</button>
+      <button onClick={submitTranscript} style={styles.button}>
+        Stop
+      </button>
+      <button onClick={resetTranscript} style={styles.button}>
+        Reset
+      </button>
       <Text style={styles.textBox}>{transcript}</Text>
+      {gotVal == 1 && (
+        <Text style={styles.godoc}>
+          You seem to show signs of borderline alzeihmers with a score of 40%.
+          But do not panic! Head over to our docubot.
+        </Text>
+      )}
+      {gotVal == 2 && <Text>No you do not seem to have dementia!</Text>}
     </View>
   );
 };
 
-{/* <View style={styles.container}>
+{
+  /* <View style={styles.container}>
   <Image source={CookieTheftImage} style={styles.image} />
   <TouchableOpacity
     onPress={isRecording ? stopRecording : startRecording}
@@ -56,7 +90,8 @@ const CookieTheft = () => {
     multiline
     editable={false}
   />
-</View>; */}
+</View>; */
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -90,12 +125,16 @@ const styles = StyleSheet.create({
     textAlignVertical: "top",
   },
   button: {
-    color: '#fff',
-    backgroundColor: '#5d45db',
-    width: '25%',
-    height: '5%',
+    color: "#fff",
+    backgroundColor: "#5d45db",
+    width: "25%",
+    height: "5%",
     borderRadius: 15,
-    marginBottom:20
-  }
+    marginBottom: 20,
+  },
+  godoc: {
+    fontFamily: "Gelion",
+    fontSize: 20,
+  },
 });
 export default CookieTheft;

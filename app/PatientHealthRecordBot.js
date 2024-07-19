@@ -4,13 +4,7 @@ import { View, StyleSheet, Text, Image, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import "deep-chat";
 
-function DementiaBot() {
-  const navigation = useNavigation();
-  const [showChat, setShowChat] = useState(false);
-  const initialMessages = [
-    { role: "user", text: "Hey, how are you today?" },
-    { role: "ai", text: "I am doing very well!" },
-  ];
+function PatientHealthRecordBot() {
   const chatElementRef = useRef(null);
 
   useEffect(() => {
@@ -75,8 +69,8 @@ function DementiaBot() {
             }
           }
         }'
-        introMessage='{"text": "Hi I am demdoc your Dementia Document Assistant, ask me anything!"}'
-        connect='{"url": "http://127.0.0.1:5000/api/leaflet-chat", "method":"POST"}'
+        introMessage='{"text": "Hi I am repobot, ask me anything about your patients report!"}'
+        connect='{"url": "http://127.0.0.1:5000/api/patient-record-chatbot", "method":"POST"}'
         speechToText='{"webSpeech": true,"translations": {"hello": "goodbye", "Hello": "Goodbye"},"commands": {"resume": "resume", "settings": {"commandMode": "hello"}},"button": {"position": "outside-left"}}'
       ></deep-chat>
     </View>
@@ -151,4 +145,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DementiaBot;
+export default PatientHealthRecordBot;

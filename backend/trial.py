@@ -1,57 +1,47 @@
-from openai import AzureOpenAI
-import os
-import json
-from dotenv import load_dotenv
-load_dotenv()
 
-endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-deployment = os.getenv("DEPLOYMENT_NAME")
-search_endpoint = os.getenv("SEARCH_ENDPOINT")
-search_key = os.getenv("AZURE_SEARCH_RESOURCE_KEY")
-search_index = os.getenv("SEARCH_INDEX_NAME")
-      
-azure_client = AzureOpenAI(
-    azure_endpoint=endpoint,
-    api_key=os.getenv("API_KEY"),
-    api_version="2024-05-01-preview",
-)
-      
-completion = azure_client.chat.completions.create(
-    model=deployment,
-    messages= [
-    {
-      "role": "user",
-      "content": "what is dementia"
-    }],
-    max_tokens=800,
-    temperature=0,
-    top_p=1,
-    frequency_penalty=0,
-    presence_penalty=0,
-    stop=None,
-    stream=False,
-    extra_body={
-      "data_sources": [{
-          "type": "azure_search",
-          "parameters": {
-            "endpoint": f"{search_endpoint}",
-            "index_name": "docu-smriti-index",
-            "semantic_configuration": "default",
-            "query_type": "semantic",
-            "fields_mapping": {},
-            "in_scope": True,
-            "role_information": "You are an AI assistant that helps people find information regarding dementia",
-            "filter": None,
-            "strictness": 3,
-            "top_n_documents": 5,
-            "authentication": {
-              "type": "api_key",
-              "key": f"{search_key}"
-            }
-          }
-        }]
-    }
-)
-data = completion.to_json()
-json_resp = json.loads(data)
-print(json_resp["choices"][0]["message"]["content"])
+
+
+# Use a pipeline as a high-level helper
+# from transformers import pipeline, BertTokenizer
+
+# pipe = pipeline("fill-mask", model="medicalai/ClinicalBERT")
+
+# MASK_TOKEN = BertTokenizer.mask_token
+
+# prompt = f'''You are an AI Medical Assistant trained on a vast dataset of health information. Please be thorough and provide an informative answer. If you don't know the answer to a specific medical inquiry, advise seeking professional help. The question is - The patient has a history of hypercholesterolemia and vitamin D deficiency - so how can this be cured? {MASK_TOKEN}'''    
+
+# resp = pipe(prompt)
+
+# print(resp[0]['generated_text'])
+
+
+# Load model directly
+# from transformers import AutoTokenizer, AutoModelForMaskedLM, pipeline
+
+# tokenizer = AutoTokenizer.from_pretrained("medicalai/ClinicalBERT")
+# model = AutoModelForMaskedLM.from_pretrained("medicalai/ClinicalBERT")
+
+# unmasker = pipeline('fill-mask', model=model, tokenizer=tokenizer)
+
+# prompt = f'''The patient has a history of hypercholesterolemia and vitamin D deficiency. The recommended cure includes [MASK].'''  
+# output = unmasker(prompt)
+
+# # Print the results
+# for idx, result in enumerate(output):
+#     print(f"Option {idx + 1}: {result['sequence']}")
+
+from transformers import pipeline
+
+# Load the text generation pipeline
+generator = pipeline('text-generation', model='gpt-2')
+
+# Define the prompt
+prompt = '''The patient has a history of hypercholesterolemia and vitamin D deficiency. The recommended treatment includes'''
+
+# Generate text using the pipeline
+generated_text = generator(prompt, max_length=100, num_return_sequences=3)
+
+# Print the generated text
+for idx, result in enumerate(generated_text):
+    print(f"Option {idx + 1}: {result['generated_text']}")
+

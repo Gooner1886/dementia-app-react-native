@@ -3,7 +3,6 @@ import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-
 function FirstPageCaregiver() {
   const navigation = useNavigation();
   return (
@@ -33,12 +32,14 @@ function FirstPageCaregiver() {
         </Text>
         <Image
           resizeMode="contain"
-          source={require('../assets/first_page.png')}
+          source={require("../assets/first_page.png")}
           style={styles.image5}
         />
         <View style={styles.cardset}>
           <View style={styles.row3}>
-            <TouchableOpacity onPress={() => navigation.navigate('DiagnosisOptions')}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("DiagnosisOptions")}
+            >
               <View style={styles.card}>
                 <Text style={styles.cardTitle}>Self-Diagnostics</Text>
                 <View style={styles.cardContent}>
@@ -46,7 +47,11 @@ function FirstPageCaregiver() {
                 </View>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("CalenderView");
+              }}
+            >
               <View style={styles.card}>
                 <Text style={styles.cardTitle}>Appointments</Text>
                 <View style={styles.cardContent}>
@@ -65,7 +70,11 @@ function FirstPageCaregiver() {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {navigation.navigate('DementiaBot')}}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("DementiaBot");
+            }}
+          >
             <View style={styles.card}>
               <Text style={styles.cardTitle}>KnowDementia Bot</Text>
               <View style={styles.cardContent}>
@@ -75,7 +84,11 @@ function FirstPageCaregiver() {
           </TouchableOpacity>
         </View>
         <View style={styles.row3}>
-          <TouchableOpacity onPress={() => {navigation.navigate('AddPatient')}}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("AddPatient");
+            }}
+          >
             <View style={styles.card}>
               <Text style={styles.cardTitle}>Add Patient</Text>
               <View style={styles.cardContent}>
@@ -93,7 +106,11 @@ function FirstPageCaregiver() {
           </TouchableOpacity>
         </View>
         <View style={styles.row4}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("PatientHealthRecordBot");
+            }}
+          >
             <View style={styles.card}>
               <Text style={styles.cardTitle}>MedicoBot</Text>
               <View style={styles.cardContent}>
@@ -101,7 +118,11 @@ function FirstPageCaregiver() {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {navigation.navigate('FamFaces')}}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("FamFaces");
+            }}
+          >
             <View style={styles.card}>
               <Text style={styles.cardTitle}>FamFaces</Text>
               <View style={styles.cardContent}>
@@ -176,7 +197,7 @@ const styles = StyleSheet.create({
   },
   cardset: {
     display: "flex",
-    width: '100%'
+    width: "100%",
   },
   row1: {
     flexDirection: "row",
