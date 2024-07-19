@@ -54,7 +54,7 @@ function Survey() {
           </View>
         </View> */}
         <View style={styles.view7}>
-          <Text style={styles.text2}>
+          <Text style={styles.text5}>
             Answer the questions below to help us understand how you feel and
             help you on this journey to be better :)
           </Text>
@@ -126,12 +126,12 @@ function Survey() {
         <View style={styles.view36}>
           <Pressable onPress={() => navigation.navigate('FirstPage')}>
             <View style={styles.button}>
-              <Text style={styles.text2}>Back</Text>
+              <Text style={styles.text5}>Back</Text>
             </View>
           </Pressable>
           <Pressable onPress={() => navigation.navigate('Survey2')}>
             <View style={styles.button}>
-              <Text style={styles.text2}>Next</Text>
+              <Text style={styles.text5}>Next</Text>
             </View>
           </Pressable>
         </View>
@@ -203,6 +203,7 @@ const styles = StyleSheet.create({
   question: {
     marginBottom: 10,
     marginLeft: 10,
+    color: "#fff",
   },
   option: {
     flexDirection: "column",
@@ -223,18 +224,24 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   text: {
-    color: "#000",
+    color: "#fff",
     fontFamily: "Gelion",
     // textAlign: "center",
     fontSize: 16,
     // marginLeft: 40
   },
   text2: {
-    color: "#000",
+    color: "#fff",
     fontFamily: "Gelion",
     // textAlign: "center",
     fontSize: 16,
   },
+  text5: {
+    color: "#000",
+    fontFamily: "Gelion",
+    // textAlign: "center",
+    fontSize: 16,
+  }
 });
 
 export default Survey;

@@ -87,7 +87,6 @@ const AddPatient = () => {
         value={familyContactNo}
         onChangeText={setFamilyContactNo}
       />
-      <br></br>
       <TouchableOpacity style={styles.button} onPress={handleReportUpload}>
         <Text style={styles.buttonText}>Upload Report</Text>
       </TouchableOpacity>
