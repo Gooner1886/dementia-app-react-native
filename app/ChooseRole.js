@@ -49,11 +49,11 @@ const styles = StyleSheet.create({
     color: "#FFF",
   },
   fontMedium: {
-    fontFamily: 'Gelion, sans-serif',
+    fontFamily: 'Gelion',
     fontWeight: "400",
   },
   fontBold: {
-    fontFamily: 'Gelion, sans-serif',
+    fontFamily: 'Gelion',
     fontWeight: "700",
   },
   content: {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   buttonText: {
-    fontFamily: 'Gelion, sans-serif',
+    fontFamily: 'Gelion',
     fontSize: 20,
     fontWeight: "700",
     color: "#FFF",

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 import { Video } from "expo-av";
 import RadioGroup from "react-native-radio-group";
-import TextToVideo from '../assets/TextToVideo.mp4'
+import TextToVideo from "../assets/output_lipsynced_male.mp4";
 
 const FamFaces = () => {
   const [text, setText] = useState("");
   const [showVideo, setShowVideo] = useState(false);
-  const [selectedGender, setSelectedGender] = useState('male');
+  const [selectedGender, setSelectedGender] = useState("male");
 
   const handleSubmit = () => {
     if (text.trim()) {
@@ -40,7 +40,19 @@ const FamFaces = () => {
         </View>
       </RadioGroup> */}
       <View style={styles.buttonContainer}>
-        <Button title="Submit" color="#5d45db" onPress={handleSubmit} />
+        <Button
+          title="Upload Caregiver Photo"
+          color="#5d45db"
+          style={styles.buttonstyle}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Submit"
+          color="#5d45db"
+          onPress={handleSubmit}
+          style={styles.buttonstyle}
+        />
       </View>
       {showVideo && (
         <Video
@@ -104,9 +116,12 @@ const styles = StyleSheet.create({
     width: 300,
     height: 400,
     marginTop: 20,
-    objectFit: 'cover',
-    overflow: 'auto',
-    position: 'relative'
+    objectFit: "cover",
+    overflow: "auto",
+    position: "relative",
+  },
+  buttonstyle: {
+    fontFamily: "Gelion",
   },
 });
 

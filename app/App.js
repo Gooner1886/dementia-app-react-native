@@ -18,6 +18,9 @@ import {
   where,
   getDocs,
 } from "firebase/firestore";
+import MediaPicker from "./CaregiverComponents/MediaPicker";
+import CarouselCards from "./CaregiverComponents/CarouselCard";
+import * as Font from "expo-font";
 import DementiaBot from "./DementiaBot";
 import DiagnosisOptions from "./CaregiverComponents/DiagnosisOptions";
 import CookieTheft from "./CaregiverComponents/CookieTheft";
@@ -34,6 +37,18 @@ const Stack = createStackNavigator();
 const q = query(collection(firestore, "articles"));
 
 const App = () => {
+  async function loadFonts() {
+    await Font.loadAsync({
+      // Replace 'path/to/font' with the actual path to your font file
+      // and 'Galion' with the correct font name if it differs
+      Gelion: require("./assets/Gelion_Regular.ttf"),
+    });
+  }
+
+  React.useEffect(() => {
+    loadFonts();
+  }, []);
+
   const checkFirestoreConnection = async () => {
     const querySnapshot = await getDocs(q);
     console.log(querySnapshot);
@@ -75,6 +90,8 @@ const App = () => {
           component={PatientHealthRecordBot}
         />
         <Stack.Screen name="CalenderView" component={CalenderView} />
+        <Stack.Screen name="MediaPicker" component={MediaPicker} />
+        <Stack.Screen name="CarouselCards" component={CarouselCards} />
       </Stack.Navigator>
     </NavigationContainer>
   );
