@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     lineHeight: 42,
     fontWeight: "600",
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     textAlign: "center",
     color: "#5d45db",
     marginBottom: 10,

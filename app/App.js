@@ -20,6 +20,8 @@ import Survey2 from './CaregiverComponents/Survey2';
 import Survey3 from './CaregiverComponents/Survey3';
 import AddPatient from './CaregiverComponents/AddPatient';
 import FamFaces from './CaregiverComponents/FamFaces';
+import MediaPicker from './CaregiverComponents/MediaPicker';
+import * as Font from 'expo-font';
 
 
 
@@ -28,6 +30,17 @@ const Stack = createStackNavigator();
 const q = query(collection(firestore, "articles"));
 
 const App = () => {
+  async function loadFonts() {
+    await Font.loadAsync({
+      // Replace 'path/to/font' with the actual path to your font file
+      // and 'Galion' with the correct font name if it differs
+      'Gelion': require('./assets/Gelion_Regular.ttf'),
+    });
+  }
+
+  React.useEffect(() => {
+    loadFonts();
+  }, []);
 
   const checkFirestoreConnection = async () => {
     const querySnapshot = await getDocs(q);
@@ -62,6 +75,7 @@ const App = () => {
         <Stack.Screen name="CookieTheft" component={CookieTheft} />
         <Stack.Screen name="AddPatient" component={AddPatient}  />
         <Stack.Screen name="FamFaces" component={FamFaces}  />
+        <Stack.Screen name="MediaPicker" component={MediaPicker}  />
       </Stack.Navigator>
     </NavigationContainer>
   );

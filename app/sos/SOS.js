@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		fontWeight: 'bold',
 		textAlign: 'center',
-		fontFamily: 'Gelion, sans-serif'
+		fontFamily: 'Gelion'
 	},
 	heytite: {
 		color: '#333333',
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		padding: 15,
 		textAlign: 'center',
-		fontFamily: 'Gelion, sans-serif',
+		fontFamily: 'Gelion',
 		justifyContent: 'center'
 	},
 	arrow: {

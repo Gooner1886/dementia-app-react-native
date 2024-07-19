@@ -83,7 +83,7 @@ function FirstPageCaregiver() {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {navigation.navigate('MediaPicker')}}>
             <View style={styles.card}>
               <Text style={styles.cardTitle}>Make Collage</Text>
               <View style={styles.cardContent}>
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
   image1: {
     width: 60,
     height: "100%",
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     fontSize: 15,
     display: "flex",
     justifyContent: "center",
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     lineHeight: 50,
     textAlign: "left",
     padding: 20,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     // fontSize: "xxx-large",
   },
   image5: {
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     marginTop: 39,
   },
   card: {
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     borderRadius: 24,
     borderWidth: 2,
     borderColor: "rgba(93, 69, 219, 1)",
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
   cardTitle: {
     color: "#5D45DB",
     fontSize: 16,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     fontWeight: "bold",
   },
   cardContent: {
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
   cardText: {
     color: "#5D45DB",
     fontSize: 12,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     fontWeight: "bold",
   },
   image6: {
@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginTop: 40,
     marginBottom: 16,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
   },
   calendar: {
     width: "100%",
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
   monthText: {
     color: "#5D45DB",
     fontSize: 16,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
   },
   days: {
     flexDirection: "row",
@@ -331,7 +331,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "left",
     marginTop: 40,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
   },
   description: {
     color: "#5D45DB",
@@ -341,7 +341,7 @@ const styles = StyleSheet.create({
     maxWidth: 440,
     width: "100%",
     paddingHorizontal: 20,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
   },
   bottom: {
     flexDirection: "row",
@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
     color: "#5D45DB",
     fontSize: 16,
     marginLeft: 8,
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
   },
   sos: {
     color: "#5D45DB",

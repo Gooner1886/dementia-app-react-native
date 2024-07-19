@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     lineHeight: 42,
     fontWeight: "600",
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     textAlign: "center",
   },
   boldText: {
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   view4: {
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     marginBottom: 10,
   },
   text2: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     color: "#FAFAFA",
     fontWeight: "400",
     textAlign: "center",
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
   },
   image2: {
     borderColor: "rgba(255, 255, 255, 1)",

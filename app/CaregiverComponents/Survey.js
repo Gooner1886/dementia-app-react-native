@@ -224,14 +224,14 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#000",
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     // textAlign: "center",
     fontSize: 16,
     // marginLeft: 40
   },
   text2: {
     color: "#000",
-    fontFamily: "Gelion, sans-serif",
+    fontFamily: "Gelion",
     // textAlign: "center",
     fontSize: 16,
   },
