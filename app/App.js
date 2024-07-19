@@ -8,6 +8,8 @@ import LoginCaregiver from "./LoginCaregiver";
 import LoginPatient from "./LoginPatient";
 import FirstPagePatient from "./PatientComponents/FirstPage";
 import DementiaBot from "./DementiaBot";
+import Alexafeature from "./Alexafeature";
+import PatientHealthRecordBot from "./PatientHealthRecordBot";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,11 @@ const App = () => {
         <Stack.Screen name="LoginPatient" component={LoginPatient} />
         <Stack.Screen name="FirstPagePatient" component={FirstPagePatient} />
         <Stack.Screen name="DementiaBot" component={DementiaBot} />
+        <Stack.Screen name="Alexafeature" component={Alexafeature} />
+        <Stack.Screen
+          name="PatientHealthRecordBot"
+          component={PatientHealthRecordBot}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
